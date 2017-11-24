@@ -1,0 +1,30 @@
+{
+    "name": "homebridge-radioplayer",
+    "version": "1.0.0",
+    "description": "play radio streams and control them over homebridge",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "postinstall": "npm install speaker --mpg123-backend=openal"
+    },
+    "keywords": [
+        "homebridge",
+        "homebridge-plugin",
+        "webradio",
+        "radio",
+        "player",
+        "stream"
+    ],
+    "author": "Michael Reiniger",
+    "license": "MIT",
+    "engines": {
+        "node": ">=7.6.0",
+        "homebridge": ">=0.2.0"
+    },
+    "dependencies": {
+        "lame": "^1.2.4",
+        "pcm-volume": "^1.0.0",
+        "request": "^2.83.0",
+        "speaker": "^0.4.0"
+    }
+}
