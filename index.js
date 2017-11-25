@@ -28,8 +28,6 @@ class RadioPlayerPlugin {
             .setCharacteristic(Characteristic.Model, 'v1.0.0')
             .setCharacteristic(Characteristic.SerialNumber, '100-66-978');
 
-        this.switchService = new Service.Switch('radio switch');
-
         this.speakerService = new Service.Lightbulb(this.name);
         this.speakerService.getCharacteristic(Characteristic.On)
             .on('get', this.getSwitchOnCharacteristic.bind(this))

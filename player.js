@@ -33,8 +33,10 @@ class Player {
     }
 
     stop() {
-        this.stream.abort();
-        this.playing = false;
+        if (this.playing) {
+            this.stream.abort();
+            this.playing = false;
+        }
     }
 
     setVolume(value) {
