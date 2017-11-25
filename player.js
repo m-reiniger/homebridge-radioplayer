@@ -22,7 +22,6 @@ class Player {
         if (!this.playing) {
             this.volume = new Volume();
             this.volume.setVolume(this.lastVolume);
-
             this.stream = request(this.streamURL);
             this.stream.pipe(new lame.Decoder())
                 .pipe(this.volume)
@@ -41,7 +40,9 @@ class Player {
 
     setVolume(value) {
         this.lastVolume = value;
-        this.volume.setVolume(value);
+        if(this.volume) {
+            this.volume.setVolume(value);
+        }
     }
 
     getVolume() {
@@ -50,7 +51,9 @@ class Player {
 
     mute() {
         this.lastVolume = 0;
-        this.volume.setVolume(0);
+        if(this.volume) {
+            this.volume.setVolume(0);
+        } 
     }
 
 }
